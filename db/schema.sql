@@ -1,0 +1,10 @@
+DROP DATABASE IF EXISTS healthy_db;
+CREATE DATABASE healthy_db; 
+USE healthy_db;
+
+CREATE TABLE eats (
+    id INTEGER NOT NULL AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    consumed BOOLEAN DEFAULT FALSE, 
+    PRIMARY KEY (id)
+);
