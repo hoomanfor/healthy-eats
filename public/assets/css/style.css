@@ -39,7 +39,7 @@ body, html {
 }
 
 .input-text {
-    border: 1px solid lightgray;
+    border: 1px solid transparent;
     display: inline-block;
     padding: 10px 15px;
     font-size: 20px;
@@ -58,6 +58,12 @@ body, html {
 
 h1 {
     font-size: 4rem; 
+}
+
+h2 {
+    border-bottom: 1px solid black; 
+    font-size: 1.4rem;
+    text-align: center; 
 }
 
 .table {

@@ -3,17 +3,32 @@
         <h1>Healthy Eats</h1>
     </div>
     <div class="input-group">
-        <input class="input-text" type="text" name="eat"><button class="add" type="button">Add</button>
+        <form>
+            <input class="input-text" placeholder="Pomegranate" type="text" name="eat"><button class="add" type="submit">Add</button>
+        </form>
     </div>
 </div>
-{{!-- <div style="margin: 0 auto;"> --}}
 <div class="table">
     <div class="row">
-        <div class="cell"><h2>Plate</h2></div>
-        <div class="cell"><h2>Eaten</h2></div>
+        <div class="cell">
+            <h2><i class="fas fa-hand-holding-heart"></i>Plate</h2>
+            <ul id="plate">
+                {{#each eats}}
+                    {{#unless consumed}}
+                        <li>{{name}}</li>
+                    {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+        <div class="cell">
+            <h2><i class="fas fa-drumstick-bite"></i>Eaten</h2>
+            <ul id="eaten">
+                {{#each eats}}
+                    {{#if consumed}}
+                        <li>{{name}}</li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </div>
-{{!-- </div> --}}
-{{!-- <i class="fas fa-sort-amount-down-alt"></i>
-<i class="fas fa-hand-holding-heart"></i>
-<i class="fas fa-drumstick-bite"></i> --}}
