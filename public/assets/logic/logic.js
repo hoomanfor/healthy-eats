@@ -18,5 +18,19 @@ $(function() {
                 location.reload(); 
             })
         }
+    });
+    $(".consume").on("click", function(event) {
+        const id = $(this).data("id");
+        const eaten = {
+            "consumed": true
+        };
+        $.ajax({
+            url: "/api/eats/" + id,
+            type: "PUT",
+            data: eaten
+        }).then(() => {
+            console.log("food item has been eaten!")
+            location.reload(); 
+        })
     })
 });

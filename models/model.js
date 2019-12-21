@@ -11,8 +11,10 @@ const model = {
             callback(data);
         })
     },
-    update: function(callback) {
-        console.log(orm.update());
+    update: function(consumed, id, callback) {
+        orm.update("eats", consumed, id, function(data) {
+            callback(data);
+        })
     }
 }
 

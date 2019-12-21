@@ -17,5 +17,15 @@ router.post("/api/eats", function(request, response) {
     })
 });
 
+router.put("/api/eats/:id", function(request, response) {
+    model.update(request.body.consumed, request.params.id, function(data) {
+        if (data.changedRows == 0) {
+            return response.status(404).end();
+        } else {
+            response.status(200).end();
+        }
+    })
+})
+
 module.exports = router;
 
