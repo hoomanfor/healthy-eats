@@ -9,7 +9,13 @@ router.get("/", function(request, response) {
         }
         response.render("index", eats);
     })
-})
+});
+
+router.post("/api/eats", function(request, response) {
+    model.add(request.body.column, request.body.value, function(data) {
+        response.status(200).end(); 
+    })
+});
 
 module.exports = router;
 

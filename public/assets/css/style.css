@@ -79,7 +79,8 @@ h2 {
 .cell {
     border: 1px solid #999999;
 	display: table-cell;
-	padding: 3px 10px;
+    padding: 3px 10px;
+    width: 50%;
 }
 
 /* ----

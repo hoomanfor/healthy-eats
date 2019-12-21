@@ -8,9 +8,12 @@ const orm = {
             callback(data);
         })
     },
-    add: function() {
-        return "orm.add()";
-
+    add: function(table, column, value, callback) {
+        const query = "INSERT INTO " + table + " (" + column + ") VALUES (?);"
+        connection.query(query, value, callback, function(error, data) {
+            if (error) throw error; 
+            callback(data);
+        })
     },
     update: function() {
         return "orm.update()";

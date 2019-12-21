@@ -5,6 +5,7 @@
     <div class="input-group">
         <form>
             <input class="input-text" placeholder="Pomegranate" type="text" name="eat"><button class="add" type="submit">Add</button>
+            <div  style="text-align: left; color:red; padding: 3px 0;" class="error"></div>
         </form>
     </div>
 </div>
@@ -15,7 +16,7 @@
             <ul id="plate">
                 {{#each eats}}
                     {{#unless consumed}}
-                        <li>{{name}}</li>
+                        <li>{{name}}<button class="consume" data-id="{{id}}">Eat</button></li>
                     {{/unless}}
                 {{/each}}
             </ul>

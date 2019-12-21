@@ -6,8 +6,10 @@ const model = {
             callback(data);
         })
     },
-    add: function(callback) {
-        console.log(orm.add());
+    add: function(column, value, callback) {
+        orm.add("eats", column, value, function(data) {
+            callback(data);
+        })
     },
     update: function(callback) {
         console.log(orm.update());
