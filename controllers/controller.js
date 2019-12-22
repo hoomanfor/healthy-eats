@@ -22,7 +22,7 @@ router.put("/api/eats/:id", function(request, response) {
         if (data.changedRows == 0) {
             return response.status(404).end();
         } else {
-            response.status(200).end();
+            return response.status(200).end();
         }
     })
 })
